@@ -1,0 +1,39 @@
+[
+	{
+		"nombre":"Mario Bello",
+		"id":1, 
+		"fecha_ultima_consulta": "12/05/18",
+		"tipo_sangre": "O+",
+		"alergias": [
+			{
+				"nombre": "Rinitivis",
+				"fecha_alta": "03/09/10",
+				"medicamento": "ospirin 100mg"
+			},
+			{
+				"nombre": "Rinitis",
+				"fecha_alta": "03/09/12",
+				"medicamento": "loratadina 10mg"
+			}
+			]
+	},
+	{
+		"nombre":"Pepe Nava",
+		"id":2, 
+		"fecha_ultima_consulta": "12/05/19",
+		"nombre":"Pepe Nava",
+		"tipo_sangre": "O+",
+		"alergias": [
+			{
+				"nombre": "Rinitivististis",
+				"fecha_alta": "03/09/08",
+				"medicamento": "ospirin 100mg"
+			},
+			{
+				"nombre": "Rinitis",
+				"fecha_alta": "03/09/16",
+				"medicamento": "loratadina 10mg"
+			}
+		]	
+	}
+]
