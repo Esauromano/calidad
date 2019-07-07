@@ -1,5 +1,5 @@
 const request = require('request');
-const config = require('../config.js');
+const config = require('./config.js');
 const fs = require('fs');
 const async = require('async');
 let rawdata = fs.readFileSync('data.json');  

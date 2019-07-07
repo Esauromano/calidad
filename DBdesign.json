@@ -1,0 +1,12 @@
+{
+   "_id": "_design/api",
+   "lists": {
+       "json": "function (head, req) {  provides('json', function(){   var results = [];   while (row = getRow()) {    var dato = {'codigo': 200, 'mensaje': 'Petición completada', 'payload':''};   dato.payload = row.value; delete dato.payload._id; delete dato.payload._rev; results.push( dato );   }  if (results.length >0 ) {send(JSON.stringify(results));} else { var noHay = {'codigo': 400,'mensaje' : 'El id de usuario no existe'}; send(JSON.stringify(noHay))}  }); }",
+       "several": "function (head, req) {    provides('json', function(){      var results = [];      while (row = getRow()) {           dato = row.value; delete dato._id; delete dato._rev; results.push( dato );       }      if (results.length >0 ) {     var datos = {'codigo': 200, 'mensaje': 'Petición completada', 'payload':''};     datos.payload=results;     send(JSON.stringify(datos));    } else { var noHay = {'error':400,'codigo': 400,'mensaje' : 'El id de usuario no existe'}; send(JSON.stringify(noHay))}  }); }"
+   },
+   "views": {
+       "id": {
+           "map": "function (doc) { emit(doc['id'], doc); }"
+       }
+   }
+}

@@ -1,7 +1,7 @@
 
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const app = require("../app");
+const app = require("./app");
 
 // Configure chai
 chai.use(chaiHttp);
@@ -13,7 +13,7 @@ describe("records", () => {
              chai.request(app)
                  .get("/demo/v1/accounts/")
                  .end((err, res) => {
-                     res.should.have.status(200 || 302);
+                     res.should.have.status(200);
                      res.body.should.be.a("object");
                      done();
                   });
@@ -25,7 +25,8 @@ describe("records", () => {
                  .get(`/demo/v1/accounts/${id}/record`)
                  .end((err, res) => {
                     console.log( res.body, res.status);
-                     
+                     res.should.have.status(200);
+                     res.body.should.be.a("array");
                      done();
                   });
          });
@@ -38,7 +39,7 @@ describe("records", () => {
                  .end((err, res) => {
 
                     console.log( res.body, res.status);
-                     res.body.should.have.codigo(400);
+                     res.should.have.status(404);
                      done();
                   });
          });
